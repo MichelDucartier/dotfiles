@@ -1,0 +1,1 @@
+playerctl position $1

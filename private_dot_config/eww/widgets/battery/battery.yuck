@@ -1,0 +1,23 @@
+(defwidget battery []
+    (box 
+        :class "battery"
+        :valign "fill"
+        :halign "start"
+        :space-evenly "false"
+
+        (label :class "battery-icon ${jq(EWW_BATTERY, '.BAT0.status', 'r')}"
+            :style "font-size: 1.3rem; padding-left: 0.8rem; padding-right: 0.8rem;"
+
+            :text capacity-icon
+        )
+        (label :class "battery-status ${jq(EWW_BATTERY, '.BAT0.status', 'r')}"
+            :style "padding-left: 0.8rem; padding-right: 0.8rem"
+            :text "${jq(EWW_BATTERY, '.BAT0.capacity')}%"
+        )
+    )
+)
+
+(defpoll capacity-icon 
+    :interval "2s"
+    :initial "󰁹"
+    "./widgets/battery/scripts/get_battery_icon.sh")

@@ -1,0 +1,39 @@
+(defwidget sound []
+    (eventbox
+        :onhover "eww update reveal-sound-slider='true'"
+        :onhoverlost "eww update reveal-sound-slider='false'"
+        (box 
+            :class "sound"
+            :valign "fill"
+            :halign "start"
+            :space-evenly "false"
+
+            (label 
+                :class "sound-icon"
+                :text "${sound-level == 0 ? '' : (sound-level < 50 ? '' : '')}"
+            )
+            (revealer
+                :transition "slideleft"
+                :reveal reveal-sound-slider
+                (box :class "sound-slider" :orientation "h"
+                    (scale 
+                        :value sound-level
+                        :min 0
+                        :max 100
+                        :onchange "amixer set Master {}% > /dev/null 2>&1"
+                        :orientation "h"
+                        :hexpand "true"
+                    )
+                )
+            )
+            (label :class "sound-status"
+                :style "padding-left: 0.8rem; padding-right: 0.8rem"
+                :text "${sound-level} %"
+            )
+            
+        )
+    )
+)
+
+(defpoll sound-level :initial 0 :interval "2s" "./widgets/sound/scripts/get-sound-level.sh")
+(defvar reveal-sound-slider "false")

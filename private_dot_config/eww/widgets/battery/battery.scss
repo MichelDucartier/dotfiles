@@ -1,0 +1,46 @@
+.battery {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+
+}
+
+.battery-icon {
+  border-radius: 1rem 0rem 0rem 1rem;
+}
+
+.battery-icon.Charging {
+  color: $surface0;
+  background-image: linear-gradient(90deg, $yellow, $green);
+}
+
+.battery-icon.Discharging {
+  color: $surface0;
+  background-image: linear-gradient(90deg, $peach, $yellow);
+}
+
+.battery-icon.Full {
+  color: $surface0;
+  background-color: $text;
+}
+
+.battery-status {
+  border-radius: 0rem 1rem 1rem 0rem;
+}
+
+.battery-status.Discharging {
+  color: $yellow;
+  background-color: $surface0;
+  border: 2px solid $yellow;
+}
+
+.battery-status.Charging {
+  color: $green;
+  background-color: $surface0;
+  border: 2px solid $green;
+}
+
+.battery-status.Full {
+  color: $text;
+  background-color: $surface0;
+  border: 2px solid $text;
+}

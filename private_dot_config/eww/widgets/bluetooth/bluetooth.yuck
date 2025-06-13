@@ -1,0 +1,28 @@
+(defwidget bluetooth []
+    (box 
+        :class "bluetooth"
+        :valign "fill"
+        :halign "start"
+        :space-evenly "false"
+        :tooltip bluetooth-devices
+        :style "margin-left: 0.5rem; margin-right: 0.5rem"
+
+        (label :class "bluetooth-icon"
+            :style "font-size: 1.2rem; padding-left: 0.8rem; padding-right: 0.6rem;"
+            :text ""
+        )
+        
+        (label :class "bluetooth-status"
+            :style "padding-left: 0.8rem; padding-right: 0.8rem"
+            :text "${bluetooth-num-devices} "
+        )
+        
+    )
+)
+
+(defpoll bluetooth-num-devices :interval "10s" "./widgets/bluetooth/scripts/get-bluetooth-num-devices.sh")
+(defpoll bluetooth-devices :interval "10s" "./widgets/bluetooth/scripts/get-bluetooth-devices.sh")
+
+; (defpoll bluetooth-strength :interval "10s" "./widgets/bluetooth/scripts/get-bluetooth-strength.sh")
+
+

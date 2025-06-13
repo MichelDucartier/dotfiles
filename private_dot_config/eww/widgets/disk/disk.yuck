@@ -1,0 +1,15 @@
+(defwidget disk []
+    (box :space-evenly "false"
+        :style "margin-left: 0.5rem; margin-right: 0.5rem"
+        (label 
+            :class "disk-icon" 
+            :text ""
+        )
+        (label 
+            :class "disk-status"
+            :truncate "true"
+            :text "${round(jq(EWW_DISK, '.\"/\".free') / 1000000000,1)}G/${round(jq(EWW_DISK, '.\"/\".total') / 1000000000, 1)}G"
+            ;:text "${round(jq(EWW_DISK, ".used_mem") / 1000000000, 1)}G/${round(jq(EWW_RAM, ".total_mem") / 1000000000, 1)}G"
+        )
+    )
+)

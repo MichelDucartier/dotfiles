@@ -1,0 +1,14 @@
+@use "frappe";
+
+.bar {
+  all: unset;
+  background-color: transparent;
+  color: $text;
+  font-family: "JetBrains Mono", "Symbols Nerd Font";
+  font-size: 1rem;
+  border-radius: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}

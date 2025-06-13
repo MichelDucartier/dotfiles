@@ -1,0 +1,13 @@
+(defwidget ram []
+    (box :space-evenly "false"
+        :style "margin-left: 0.5rem; margin-right: 0.5rem"
+        (label 
+            :class "ram-icon" 
+            :text "󰍛"
+        )
+        (label 
+            :class "ram-status"
+            :text "${round(jq(EWW_RAM, ".used_mem") / 1000000000, 1)}G/${round(jq(EWW_RAM, ".total_mem") / 1000000000, 1)}G"
+        )
+    )
+)

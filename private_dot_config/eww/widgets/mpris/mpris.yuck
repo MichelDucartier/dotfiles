@@ -1,0 +1,25 @@
+(defwidget mpris []
+    (eventbox :class "mpris" :onhover "./scripts/toggle_player.sh"
+        :valign "fill"
+        :halign "start"
+
+        (box :orientation "h" :space-evenly "false" 
+            (label 
+                :class "mprislogo ${mpris-player}"
+                :style "padding-left: 0.7rem; padding-right: 0.7rem"
+                :text "${mpris-playerlogo}"
+            )
+            (label 
+                :class "mprisstatus ${mpris-player}"
+                :style "padding-left: 1rem; padding-right: 1rem"
+                :truncate "true" :limit-width 40
+                :text "${mpris-artist} - ${mpris-title}"
+            )
+        )
+    )
+)
+
+(defpoll mpris-player :interval "2s" "./widgets/mpris/scripts/get-player.sh")
+(defpoll mpris-playerlogo :interval "2s" "./widgets/mpris/scripts/get-playerlogo.sh")
+(defpoll mpris-artist :interval "2s" "./widgets/mpris/scripts/get-mpris-artist.sh")
+(defpoll mpris-title :interval "2s" "./widgets/mpris/scripts/get-mpris-title.sh")

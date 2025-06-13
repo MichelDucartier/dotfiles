@@ -1,0 +1,23 @@
+(defwidget wifi []
+    (box 
+        :class "wifi"
+        :valign "fill"
+        :halign "start"
+        :space-evenly "false"
+        :style "margin-left: 0.5rem; margin-right: 0.5rem"
+        (label :class "wifi-icon"
+            :style "font-size: 1rem; padding-left: 0.8rem; padding-right: 0.8rem;"
+            :text ""
+        )
+        (label :class "wifi-status"
+            :style "padding-left: 0.8rem; padding-right: 0.8rem"
+            :text "${wifi-ssid} (${wifi-strength}%)"
+        )
+        
+    )
+)
+
+(defpoll wifi-ssid :interval "10s" "iwgetid -r")
+(defpoll wifi-strength :interval "10s" "./widgets/wifi/scripts/get-wifi-strength.sh")
+
+

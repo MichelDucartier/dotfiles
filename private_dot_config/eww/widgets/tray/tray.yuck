@@ -1,0 +1,8 @@
+(defwidget tray [] 
+    (systray  :class "tray-container"
+        :style "padding-left: 1rem; padding-right: 1rem;" 
+        :orientation "h" 
+        :spacing "20"
+        :space-evenly "true"
+    )
+)

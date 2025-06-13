@@ -1,0 +1,54 @@
+
+(defwidget player []
+    (eventbox 
+        :class "empty"
+        :onhoverlost "eww close player" 
+        :onhover "./widgets/player/scripts/init.sh"
+        (box :class "musicplayer" :orientation "v" :space-evenly "false" 
+            (box :class "musicart" 
+                :style "background: url('${cover}') center/cover"
+                art)
+            (box :class "music-slider" :orientation "h" 
+                (scale :hexpand "true" 
+                :value musicprogression 
+                :min 0 :max musiclength 
+                :tooltip musicprogression-formatted
+                :onchange "./widgets/player/scripts/setposition.sh {}")
+            )
+            (box :orientation "h" :halign "center" :class "musicbtn" :space-evenly "false" 
+                (button 
+                    :class "music-shuffle ${shuffle-status}"
+                    :onclick "./widgets/player/scripts/toggle-shuffle.sh"
+                    ""
+                )
+
+                (button :onclick "playerctl previous" "")
+                (button :onclick "./widgets/player/scripts/toggle-pauseplay.sh" 
+                    "${pauseplay == 'Playing' ? '' : ''}")
+                (button :onclick "playerctl next" "")
+                (button
+                    :class "music-loop ${loop-status}"
+                    :onclick "./widgets/player/scripts/toggle-next-loop.sh" 
+                    "${loop-status == 'track' ? '󰑘' : 
+                        (loop-status == 'playlist' ? '󰑖' : '󰑗')}"
+                )
+            )
+                
+        )
+    )
+)
+
+(defwindow player 
+	:geometry (geometry :anchor "top center")
+    :stacking "fg"
+    :windowtype "normal"
+    (player))
+
+(defvar pauseplay "Playing")
+(defvar loop-status "none")
+(defvar shuffle-status "off")
+(defpoll cover :interval "2s"  "./widgets/player/scripts/echoart.sh")
+(defpoll art :interval "2s"  "./widgets/player/scripts/getart.sh")
+(defpoll musicprogression :initial -1 :interval "2s" "playerctl position")
+(defpoll musiclength :initial -1 :interval "2s" "./widgets/player/scripts/getmusiclength.sh")
+(defpoll musicprogression-formatted :interval "2s" "./widgets/player/scripts/formatprogression.sh")

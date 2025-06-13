@@ -1,0 +1,19 @@
+.wifi {
+  all: unset;
+}
+
+.wifi-icon {
+  border-radius: 1rem 0rem 0rem 1rem;
+  background-color: $text;
+  color: $surface0;
+}
+
+.wifi-status {
+  background-color: $surface0;
+  color: $text;
+  border-radius: 0rem 1rem 1rem 0rem;
+  border-right: 2px solid $text;
+  border-top: 2px solid $text;
+  border-bottom: 2px solid $text;
+
+}

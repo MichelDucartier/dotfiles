@@ -1,0 +1,22 @@
+(deflisten workspaces :initial "[]" "bash ~/.config/eww/widgets/workspaces/scripts/get-workspaces.sh")
+
+(deflisten current_workspace :initial "1" "bash ~/.config/eww/widgets/workspaces/scripts/get-active-workspace.sh")
+
+(defwidget workspaces []
+  (box :space-evenly "false"
+  (eventbox :class "workspaces" :onscroll "bash ~/.config/eww/widgets/workspaces/scripts/change-active-workspace.sh {} ${current_workspace}" 
+    (box :space-evenly "false"
+      (label :text "${workspaces}${current_workspace}" :visible false)
+      (for workspace in workspaces
+        (eventbox 
+            :class "workspace-entry ${workspace.id == current_workspace ? "current" : ""} ${workspace.windows > 0 ? "occupied" : "empty"}"
+            :onclick "hyprctl dispatch workspace ${workspace.id}"
+          (box 
+            (label :text "${workspace.id}")
+            )
+          )
+        )
+      )
+    )
+  )
+)

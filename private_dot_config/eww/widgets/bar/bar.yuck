@@ -1,0 +1,65 @@
+(include "widgets/workspaces/workspaces.yuck")
+(include "widgets/mpris/mpris.yuck")
+(include "widgets/clock/clock.yuck")
+(include "widgets/battery/battery.yuck")
+(include "widgets/wifi/wifi.yuck")
+(include "widgets/bluetooth/bluetooth.yuck")
+(include "widgets/sound/sound.yuck")
+(include "widgets/tray/tray.yuck")
+(include "widgets/ram/ram.yuck")
+(include "widgets/disk/disk.yuck")
+
+
+(defwidget bar []
+    (centerbox :orientation "h" :class "bar"
+        (box 
+            :orientation "horizontal"
+            :halign "start"
+            :valign "fill"
+
+            :space-evenly "false"
+            (workspaces)
+            (box
+                :halign "start"
+                :valign "fill"
+                :style "margin-left: 1rem; margin-right: 0.5rem;"
+                :space-evenly "false"
+                (ram)
+                (disk)
+            )
+            (box
+                :halign "start"
+                :valign "fill"
+                :style "margin-left: 0.5rem; margin-right: 1rem;"
+                :space-evenly "false"
+                (wifi)
+                (bluetooth)
+            )
+        )
+        (mpris)
+        (centerbox 
+            :halign "fill"
+            :valign "start"
+            :orientation "horizontal"
+            (box)
+            (box)
+            (box
+                :space-evenly "false"
+                (clock)
+                (battery)
+                (sound)
+                (tray)
+            )
+        )
+    )
+)
+
+(defwindow bar 
+	:geometry (geometry :anchor "top center" :width "100%")
+    :stacking "fg"
+    :exclusive true
+    :wm-ignore true
+    :stacking "bottom"
+    (bar))
+
+

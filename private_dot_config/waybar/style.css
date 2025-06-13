@@ -1,0 +1,179 @@
+@import "frappe.css";
+
+* {
+    font-family: "JetBrains Mono", "Symbols Nerd Font";
+    font-size: 14px;
+    min-height: 0;
+}
+
+window.eDP-1 * { 
+    font-size: 12px; 
+}
+
+#waybar {
+  background: alpha(@crust, 0.5);
+  margin: 0px 0px;
+}
+
+#workspaces {
+  border-radius: 1rem;
+  margin: 0.5rem;
+  background-color: @surface0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+#workspaces button {
+  color: @text;
+  border-radius: 1rem;
+  padding: 0.4rem;
+}
+
+#workspaces button.active {
+    color: @rosewater;
+    background-color: @surface2;
+    border: 2px solid @rosewater;
+}
+
+#workspaces button:hover {
+  color: @surface0;
+  background-color: @rosewater;
+  border-radius: 1rem;
+}
+
+#bluetooth,
+#network,
+#disk,
+#memory,
+#mpris,
+#tray,
+#backlight,
+#clock,
+#battery,
+#pulseaudio,
+#cava,
+#custom-lock,
+#custom-power {
+  background-color: @surface0;
+  padding: 0.5rem 1rem;
+  margin: 5px 0;
+}
+
+
+#memory {
+    border-radius: 1rem 0px 0px 1rem;
+    color: @surface0;
+    background-image: linear-gradient(90deg, @rosewater 10%, @flamingo 90%);
+}
+
+#disk {
+    color: @surface0;
+    border-radius: 0px 1rem 1rem 0px;
+    margin-right: 1rem;
+    background-image: linear-gradient(90deg, @flamingo 10%, @pink 90%);
+}
+
+#clock {
+    color: @text;
+    border-radius: 1rem 1rem 1rem 1rem;
+    margin-right: 1rem;
+    background-color: @surface0;
+    border: 2px solid @text;
+}
+
+#battery {
+    color: @text;
+    background-color: @surface0;
+    border-radius: 1rem 1rem 1rem 1rem;
+    margin-right: 1rem;
+    border: 2px solid @text;
+}
+
+#battery.full {
+    color: @text;
+    background-color: @surface0;
+    border: 2px solid @text;
+}
+
+#battery.discharging {
+    color: @yellow;
+    border: 2px solid @yellow;
+}
+
+#battery.discharging.warning {
+    color: @red;
+    border: 2px solid @red;
+}
+
+#battery.charging {
+    color: @green;
+    border: 2px solid @green;
+}
+
+#cava {
+    color: @text;
+    border-radius: 1rem 0rem 0rem 1rem;
+    background-color: @surface0;
+    border: 2px solid @green; 
+}
+
+#pulseaudio {
+    color: @surface0;
+    border-radius: 0rem 1rem 1rem 0rem;
+    background-image: linear-gradient(45deg, @green 10%, @text 90%);
+    background-position: left;
+    margin-right: 1rem
+}
+
+#mpris {
+  color: @text;
+  border-radius: 1rem 1rem 1rem 1rem;
+  background-color: @surface0;
+}
+
+#mpris.spotify {
+    color: @surface0;
+    background-image: linear-gradient(45deg, @green 10%, @teal 90%);
+}
+
+#mpris.firefox {
+    color: @surface0;
+    background-image: linear-gradient(45deg, @peach 10%, @maroon 90%);
+}
+
+#custom-lock {
+    border-radius: 1rem 0px 0px 1rem;
+    color: @text;
+    border-left: 2px solid @text;
+    border-top: 2px solid @text;
+    border-bottom: 2px solid @text;
+}
+
+#custom-power {
+    margin-right: 1rem;
+    border-radius: 0px 1rem 1rem 0px;
+    color: @text;
+    border-right: 2px solid @text;
+    border-top: 2px solid @text;
+    border-bottom: 2px solid @text;
+
+}
+
+#tray {
+  margin-right: 1rem;
+  border-radius: 1rem;
+}
+
+#network {
+    color: @surface0;
+    background-image: linear-gradient(90deg, @sky 10%, @sapphire 90%);
+    border-radius: 1rem 0rem 0rem 1rem;
+}
+
+#bluetooth {
+    color: @surface0;
+    background-image: linear-gradient(90deg, @sapphire 10%, @blue 90%);
+    border-radius: 0rem 1rem 1rem 0rem;
+}
+
+

@@ -1,0 +1,20 @@
+(defwidget clock []
+    (box :orientation "h" :space-evenly "false"
+        :valign "fill"
+        :halign "start"
+        :class "clock"
+        (label :class "clock-symbol" 
+            :style "padding-left: 0.8rem; padding-right: 0.8rem"
+            :text "󱑂"
+        )
+        (label :class "clock-time-status"
+            :style "padding-left: 0.8rem; padding-right: 0.8rem"
+            :text "${formattime(EWW_TIME, "%R")}"
+        )
+        (label :class "clock-calendar-status" 
+            :style "padding-left: 0.8rem; padding-right: 0.8rem"
+            :text "${formattime(EWW_TIME, "%a %d %h")}"
+        )
+    )
+)
+

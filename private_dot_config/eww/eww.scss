@@ -1,0 +1,37 @@
+@import "frappe.scss";
+@import "widgets/bar/bar.scss";
+@import "widgets/player/player.scss";
+@import "widgets/workspaces/workspaces.scss";
+@import "widgets/mpris/mpris.scss";
+@import "widgets/clock/clock.scss";
+@import "widgets/battery/battery.scss";
+@import "widgets/wifi/wifi.scss";
+@import "widgets/bluetooth/bluetooth.scss";
+@import "widgets/sound/sound.scss";
+@import "widgets/tray/tray.scss";
+@import "widgets/ram/ram.scss";
+@import "widgets/disk/disk.scss";
+
+
+* {
+  all: unset;
+}
+
+window {
+  all: unset;
+}
+
+button {
+  all: unset;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+
+tooltip {
+  all: unset;
+  color: $text;
+  background-color: $surface0;
+  border: 2px solid $text;
+  border-radius: 1rem
+}

@@ -1,0 +1,81 @@
+.empty {
+  all: unset;
+  // background-color: transparent;
+  // border-radius: 1rem;
+}
+
+.musicplayer {
+  all: unset;
+  background-color: $surface0;
+  color: $text;
+  font-family: "JetBrains Mono", "Font Awesome 6 Free";
+  font-size: 1.5rem;
+  border-radius: 1rem;
+}
+
+.musicart {
+  all: unset;
+  min-width: 20rem;
+  min-height: 20rem;
+  background-size: cover;
+  border-radius: 1rem 1rem 0rem 0rem;
+}
+
+.music-slider {
+  all: unset;
+  background-color: $surface0;
+  color: $text;
+}
+
+.music-slider scale trough {
+  all: unset;
+  background-color: $text;
+  border-radius: 1rem;
+  min-height: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.music-slider scale trough highlight {
+  all: unset;
+  background-image: linear-gradient(90deg, $teal, $green)
+}
+
+.music-slider slider {
+  all: unset;
+  background-color: $green;
+  border-radius: 50%;
+  min-width: 0.8rem;
+  min-height: 0.8rem;
+  margin-top: -0.5rem;
+  margin-bottom: -0.5rem;
+  box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.3);
+}
+
+.musicbtn button {
+  all: unset;
+  font-family: "JetBrains Mono", "Font Awesome 6 Free";
+  font-size: 1.5rem;
+  background-color: $text;
+  color: $surface0;
+  border-radius: 50%;
+  margin: 0rem 0.5rem 1rem 0.5rem;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+
+}
+
+.musicbtn button:hover {
+  background-image: linear-gradient(45deg, $teal, $green);
+}
+
+.music-shuffle.on {
+  background-color: $green;
+}
+
+.music-loop.playlist {
+  background-color: $green;
+}
+
+.music-loop.track {
+  background-color: $green;
+}

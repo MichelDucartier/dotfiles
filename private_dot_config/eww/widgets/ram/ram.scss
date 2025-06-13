@@ -1,0 +1,22 @@
+.ram-icon {
+  all: unset;
+  background-color: $text;
+  color: $surface0;
+  border-radius: 1rem 0rem 0rem 1rem;
+  font-size: 1.6rem;
+  padding-left: 0.8rem;
+  padding-right: 0.6rem;
+}
+
+.ram-status {
+  all: unset;
+  background-color: $surface0;
+  border-radius: 0rem 1rem 1rem 0rem;
+  border-right: 2px solid $text;
+  border-top: 2px solid $text;
+  border-bottom: 2px solid $text;
+  color: $text;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+
+}

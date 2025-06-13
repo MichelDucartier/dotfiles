@@ -1,0 +1,31 @@
+.clock {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+
+.clock-symbol {
+  border-radius: 1rem 0rem 0rem 1rem;
+  color: $surface0;
+  background-color: $text;
+  font-size: 1.2rem;
+}
+
+.clock-time-status {
+  border-radius: 0rem;
+  border-right: 1px solid $text;
+  border-bottom: 2px solid $text;
+  border-top: 2px solid $text;
+  color: $text;
+  background-color: $surface0;
+}
+
+.clock-calendar-status {
+  border-radius: 0rem 1rem 1rem 0rem;
+  border-left: 1px solid $text;
+  border-bottom: 2px solid $text;
+  border-top: 2px solid $text;
+  border-right: 2px solid $text;
+  color: $text;
+  background-color: $surface0;
+}
