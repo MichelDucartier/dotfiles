@@ -15,13 +15,7 @@
   border-radius: 1rem 1rem 0rem 0rem;
 }
 
-.music-slider {
-  all: unset;
-  background-color: $surface0;
-  color: $text;
-}
-
-.music-slider scale trough {
+.music-slider trough {
   all: unset;
   background-color: $text;
   border-radius: 1rem;
@@ -29,7 +23,7 @@
   margin-bottom: 1rem;
 }
 
-.music-slider scale trough highlight {
+.music-slider trough highlight {
   all: unset;
   background-image: linear-gradient(90deg, $teal, $green)
 }
