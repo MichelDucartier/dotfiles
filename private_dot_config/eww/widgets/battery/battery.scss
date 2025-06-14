@@ -44,3 +44,33 @@
   background-color: $surface0;
   border: 2px solid $text;
 }
+
+.battery-progress {
+  all: unset;
+  background-color: $surface0;
+  color: $text;
+}
+
+.battery-progress scale trough {
+  all: unset;
+  background-color: $text;
+  border-radius: 1rem;
+  min-height: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.battery-progress scale trough highlight {
+  all: unset;
+  background-image: linear-gradient(90deg, $teal, $green)
+}
+
+.battery-progress slider {
+  all: unset;
+  background-color: $green;
+  border-radius: 50%;
+  min-width: 0.8rem;
+  min-height: 0.8rem;
+  margin-top: -0.5rem;
+  margin-bottom: -0.5rem;
+  box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.3);
+}

@@ -1,6 +1,6 @@
 (defwidget disk []
     (box :space-evenly "false"
-        :style "margin-left: 0.5rem; margin-right: 0.5rem"
+        :style "margin-left: 1.0rem; margin-right: 0.5rem"
         (label 
             :class "disk-icon" 
             :text ""

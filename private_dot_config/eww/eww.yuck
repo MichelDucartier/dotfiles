@@ -1,2 +1,2 @@
-(include "./widgets/player/player.yuck")
-(include "./widgets/bar/bar.yuck")
+(include "widgets/bar/bar.yuck")
+(include "widgets/calendar/calendar.yuck")

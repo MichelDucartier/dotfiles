@@ -3,6 +3,7 @@
         :valign "fill"
         :halign "start"
         :class "clock"
+        :style "padding-top: 0rem; padding-bottom: 0rem"
         (label :class "clock-symbol" 
             :style "padding-left: 0.8rem; padding-right: 0.8rem"
             :text "󱑂"
@@ -11,10 +12,15 @@
             :style "padding-left: 0.8rem; padding-right: 0.8rem"
             :text "${formattime(EWW_TIME, "%R")}"
         )
-        (label :class "clock-calendar-status" 
-            :style "padding-left: 0.8rem; padding-right: 0.8rem"
-            :text "${formattime(EWW_TIME, "%a %d %h")}"
+        (button
+            :onclick "scripts/show_calendar.sh"
+            :class "clock-calendar-status"
+            (label  
+                :style "padding-left: 0.8rem; padding-right: 0.8rem"
+                :text "${formattime(EWW_TIME, "%a %d %h")}"
+            )
         )
     )
 )
+
 

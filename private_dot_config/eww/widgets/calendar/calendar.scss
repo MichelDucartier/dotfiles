@@ -1,0 +1,41 @@
+.calendar-widget {
+  all: unset;
+  font-family: JetBrains Mono;
+  background-color: $surface0;
+  color: $text;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border-radius: 1rem;
+}
+
+.calendar-widget label {
+  all: unset;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  color: $red;
+}
+
+.calendar-widget.button {
+  all: unset;
+  background-color: $surface1;
+  color: $text;
+  border-radius: 1rem;
+}
+
+.calendar-widget.button:hover {
+  all: unset;
+  background-color: $rosewater;
+  color: $surface0;
+  border-radius: 1rem;
+}
+
+.calendar-widget:selected {
+  color: $rosewater;
+  padding-bottom: 0.0rem;
+}
+
+.calendar-widget.highlight {
+  font-weight: bold;
+}
+
+.calendar-widget:indeterminate {
+  color: $overlay0;
+}

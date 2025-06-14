@@ -1,8 +1,10 @@
+(include "widgets/player/player.yuck")
+
 (defwidget mpris []
-    (eventbox :class "mpris" :onhover "./scripts/toggle_player.sh"
+    (eventbox :class "mpris" 
+        :onhover "./scripts/toggle_player.sh"
         :valign "fill"
         :halign "start"
-
         (box :orientation "h" :space-evenly "false" 
             (label 
                 :class "mprislogo ${mpris-player}"

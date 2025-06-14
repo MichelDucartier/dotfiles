@@ -1,7 +1,5 @@
-
 (defwidget player []
     (eventbox 
-        :class "empty"
         :onhoverlost "eww close player" 
         :onhover "./widgets/player/scripts/init.sh"
         (box :class "musicplayer" :orientation "v" :space-evenly "false" 
@@ -33,7 +31,6 @@
                         (loop-status == 'playlist' ? '󰑖' : '󰑗')}"
                 )
             )
-                
         )
     )
 )
@@ -42,6 +39,7 @@
 	:geometry (geometry :anchor "top center")
     :stacking "fg"
     :windowtype "normal"
+    :namespace "bar"
     (player))
 
 (defvar pauseplay "Playing")
@@ -49,6 +47,6 @@
 (defvar shuffle-status "off")
 (defpoll cover :interval "2s"  "./widgets/player/scripts/echoart.sh")
 (defpoll art :interval "2s"  "./widgets/player/scripts/getart.sh")
-(defpoll musicprogression :initial -1 :interval "2s" "playerctl position")
+(defpoll musicprogression :initial -1 :interval "1s" "playerctl position")
 (defpoll musiclength :initial -1 :interval "2s" "./widgets/player/scripts/getmusiclength.sh")
-(defpoll musicprogression-formatted :interval "2s" "./widgets/player/scripts/formatprogression.sh")
+(defpoll musicprogression-formatted :interval "1s" "./widgets/player/scripts/formatprogression.sh")

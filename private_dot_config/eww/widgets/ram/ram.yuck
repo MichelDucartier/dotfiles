@@ -1,6 +1,6 @@
 (defwidget ram []
     (box :space-evenly "false"
-        :style "margin-left: 0.5rem; margin-right: 0.5rem"
+        :style "margin-left: 0.5rem; margin-right: 0.0rem"
         (label 
             :class "ram-icon" 
             :text "󰍛"

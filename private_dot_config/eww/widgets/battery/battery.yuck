@@ -1,7 +1,6 @@
 (defwidget battery []
-    (box 
-        :class "battery"
-        :valign "fill"
+        (box 
+         :class "battery"
         :halign "start"
         :space-evenly "false"
 

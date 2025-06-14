@@ -1,0 +1,36 @@
+(defwidget hardware []
+    (eventbox 
+        :onhover "eww update reveal-hardware=true"
+        :onhoverlost "eww update reveal-hardware=false"
+        :valign "fill"
+        :halign "start"
+
+        (box 
+            :orientation "h"
+            :space-evenly false
+            (ram)
+            (revealer 
+                :hexpand true
+                :reveal reveal-hardware
+                :transition "slideright"
+                (disk)
+            )
+            ; (box 
+            ;     :class "cpu-usage"
+            ;     :space-evenly false
+            ;     (circular-progress
+            ;         ; :value "${round(jq(EWW_CPU, ".avg"), 1)}"
+            ;         :value 100
+            ;         :halign "center"
+            ;         :valign "center"
+            ;         ; :width 30
+            ;         ; :height 30
+            ;         :thickness 3
+            ;         (label :text "${round(jq(EWW_CPU, ".avg"), 2)}")
+            ;     )
+            ; )
+        )
+    )
+)
+
+(defvar reveal-hardware false)

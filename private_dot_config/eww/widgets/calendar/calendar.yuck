@@ -1,0 +1,13 @@
+(defwidget calendar-widget []
+    (eventbox :onhoverlost "eww close calendar-window"
+        (calendar :class "calendar-widget")
+    )
+)
+
+(defwindow calendar-window
+    :exclusive false
+    :geometry (geometry :anchor "top right")
+    (calendar-widget)
+)
+
+

@@ -12,6 +12,7 @@
 }
 
 .clock-time-status {
+  all: unset;
   border-radius: 0rem;
   border-right: 1px solid $text;
   border-bottom: 2px solid $text;
@@ -21,6 +22,7 @@
 }
 
 .clock-calendar-status {
+  all: unset;
   border-radius: 0rem 1rem 1rem 0rem;
   border-left: 1px solid $text;
   border-bottom: 2px solid $text;
@@ -28,4 +30,9 @@
   border-right: 2px solid $text;
   color: $text;
   background-color: $surface0;
+}
+
+.clock-calendar-status:hover {
+  color: $surface0;
+  background-color: $rosewater;
 }

@@ -8,7 +8,7 @@
 (include "widgets/tray/tray.yuck")
 (include "widgets/ram/ram.yuck")
 (include "widgets/disk/disk.yuck")
-
+(include "widgets/hardware/hardware.yuck")
 
 (defwidget bar []
     (centerbox :orientation "h" :class "bar"
@@ -16,16 +16,16 @@
             :orientation "horizontal"
             :halign "start"
             :valign "fill"
-
-            :space-evenly "false"
+            :space-evenly false
             (workspaces)
             (box
                 :halign "start"
                 :valign "fill"
                 :style "margin-left: 1rem; margin-right: 0.5rem;"
-                :space-evenly "false"
-                (ram)
-                (disk)
+                :space-evenly false
+                ; (ram)
+                ; (disk)
+                (hardware)
             )
             (box
                 :halign "start"
@@ -57,6 +57,7 @@
 (defwindow bar 
 	:geometry (geometry :anchor "top center" :width "100%")
     :stacking "fg"
+    :namespace "bar"
     :exclusive true
     :wm-ignore true
     :stacking "bottom"
