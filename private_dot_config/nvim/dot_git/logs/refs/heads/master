@@ -1,0 +1,3 @@
+0000000000000000000000000000000000000000 45acdcb646b72297e29e96457b07ad80d973bc21 michael <michael@archlinux.localdomain> 1741546033 +0100	clone: from github.com:MichelDucartier/nvim-config.git
+45acdcb646b72297e29e96457b07ad80d973bc21 d9534428a035349deb3a4efe1776d811326ffd08 MichelDucartier <m.zhang2490@gmail.com> 1743172226 +0100	commit: Add many plugins
+d9534428a035349deb3a4efe1776d811326ffd08 1679047e66ef6765764b511644d1d9f4b1909c0f MichelDucartier <m.zhang2490@gmail.com> 1743409647 +0200	commit: Add inline diagnostics
