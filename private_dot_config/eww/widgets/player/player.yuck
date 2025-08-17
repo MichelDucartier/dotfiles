@@ -1,14 +1,32 @@
 (defwidget player []
     (eventbox 
-        :onhoverlost "eww close player" 
-        :onhover "./widgets/player/scripts/init.sh"
-        (box :class "musicplayer" :orientation "v" :space-evenly "false" 
-            (box :class "musicart" 
-                :style "background: url('${cover}') center/cover"
-                art)
+        :onhoverlost "./widgets/player/scripts/close.sh"
+        (box :class "musicplayer" :orientation "v" :space-evenly false 
+            (centerbox :orientation "h"
+                :space-evenly false
+                (box :class "musicart" 
+                    :style "background: url('${cover}') center/cover"
+                    art
+                )
+                (box)
+                (box :orientation "v" :class "playerinfo" 
+                    (label :text "${mpris-title}"
+                        :limit-width 30
+                        :truncate false
+                        :show-truncated true
+                        :lines 2
+                        :justify "center"
+                        :class "titleinfo"
+                     )
+                     (label :text "${mpris-artist}" 
+                        :class "titlealbum" 
+                        :limit-width 30
+                        :justify "center"
+                     )
+                )
+            )
             (box :orientation "h" 
                 (scale 
-                    :hexpand true 
                     :value 50
                     :value musicprogression 
                     :min 0 :max musiclength 
@@ -17,7 +35,8 @@
                     :tooltip musicprogression-formatted
                     :onchange "./widgets/player/scripts/setposition.sh {}")
             )
-            (box :orientation "h" :halign "center" :class "musicbtn" :space-evenly "false" 
+            (box :orientation "h" 
+                :halign "center" :class "musicbtn" :space-evenly false
                 (button 
                     :class "music-shuffle ${shuffle-status}"
                     :onclick "./widgets/player/scripts/toggle-shuffle.sh"
@@ -40,13 +59,28 @@
 )
 
 (defwindow player 
-	:geometry (geometry :anchor "top center")
+	:geometry 
+        (geometry  
+            :anchor "top center"
+            :width "20%"
+        )
     :stacking "fg"
     :windowtype "normal"
     :namespace "bar"
-    (player))
+    (box
+        :space-evenly true
+        :valign "center"
+        (revealer
+           :transition "slideup"
+           :reveal     mediarev
+           :duration   "200ms"
+           (player)
+        )
+    )
+)
 
 (defvar pauseplay "Playing")
+(defvar mediarev false)
 (defvar loop-status "none")
 (defvar shuffle-status "off")
 (defpoll cover :interval "2s"  "./widgets/player/scripts/echoart.sh")

@@ -28,7 +28,7 @@
                 (hardware)
             )
             (box
-                :halign "start"
+                :halign "center"
                 :valign "fill"
                 :style "margin-left: 0.5rem; margin-right: 1rem;"
                 :space-evenly "false"

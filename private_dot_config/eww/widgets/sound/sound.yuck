@@ -20,7 +20,7 @@
                         :value sound-level
                         :min 0
                         :max 100
-                        :onchange "amixer set Master {}% > /dev/null 2>&1"
+                        :onchange "amixer set Master {}% > /dev/null 2>&1; eww update sound-level={}"
                         :orientation "h"
                         :hexpand "true"
                     )
